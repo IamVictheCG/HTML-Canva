@@ -7,13 +7,27 @@ context.lineCap = 'round'
 context.lineJoin= 'round'
 
 let isDrawing = false
-// let lastX = 0
-// let lastY = 0
+let lastX = 0; 
+let lastY = 0; 
 
 function draw(e) {
-    // console.log(e)
-    return e
-}
+    if (!isDrawing) return
+    console.log(e)
 
-check.innerHTML = canvas.addEventListener('mousemove', draw())
+    context.beginPath();
+    //starts from
+    context.moveTo(lastX, lastY);
+    //goes to
+    context.lineTo(e.offsetX, e.offsetY);
+    context.stroke();
+}
+canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    lastY = e.offsetY;
+    lastX = e.offsetX;
+    // [lastX, lastY] = [e.offsetX, e.offsetY];
+})
+canvas.addEventListener('mousemove', draw)
+canvas.addEventListener('mouseup', () => isDrawing = false)
+canvas.addEventListener('mouseout', () => isDrawing = false)
 
