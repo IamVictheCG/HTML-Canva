@@ -16,4 +16,8 @@ canvas {
   height: 92vh;
   position: fixed;
   bottom: 0px;
+}
+
+.check {
+  z-index: 5;
 }/*# sourceMappingURL=style.css.map */
