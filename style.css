@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  color: aqua;
+  background-color: rgb(55, 72, 67);
+}
+
+canvas {
+  height: 92vh;
+  position: fixed;
+  bottom: 0px;
+}/*# sourceMappingURL=style.css.map */
