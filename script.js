@@ -5,12 +5,13 @@ canvas.width = window.innerWidth;
 context.strokeStyle = `BADA55`;
 context.lineCap = 'round';
 context.lineJoin= 'round';
-context.lineWidth = 40;
+context.lineWidth = 100;
 
 let isDrawing = false
 let lastX = 0; 
 let lastY = 0; 
 let hue = 0
+let direction = true
 
 function draw(e) {
     if (!isDrawing) return
@@ -30,6 +31,18 @@ function draw(e) {
 
     if(hue >= 360) {
         hue = 0
+    }
+
+    if(context.lineWidth >= 100) {
+        context.lineWidth = 10;
+    }
+    if(context.lineWidth >= 100 || context.lineWidth <= 1) {
+        direction = !direction;
+    }
+    if (direction= true) {
+        context.lineWidth++
+    } else {
+        context.lineWidth--
     }
 }
 canvas.addEventListener('mousedown', (e) => {
